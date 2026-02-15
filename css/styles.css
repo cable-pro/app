@@ -256,7 +256,7 @@ img {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 110px 0 40px;
+        padding: 120px 0 40px;
     }
 
     .hero-container {
@@ -593,7 +593,7 @@ img {
 
 /* Responsive Header Adjustment */
 @media (max-width: 768px) {
-    header {
+    .header {
         height: 70px;
     }
 
@@ -699,5 +699,9 @@ img {
 
     .section {
         padding: 60px 0;
+    }
+
+    .hero {
+        padding-top: 120px;
     }
 }
