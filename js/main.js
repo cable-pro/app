@@ -42,6 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // But we can add active state highlighting if needed.
 
     // 4. Reveal Animations on Scroll
+    const sections = document.querySelectorAll('.section');
+
+    if (!('IntersectionObserver' in window)) {
+        // Fallback for older browsers: show all sections immediately
+        sections.forEach(section => {
+            section.classList.add('reveal-active');
+        });
+        return;
+    }
+
     const observerOptions = {
         threshold: 0.1
     };
@@ -55,8 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Apply reveal class to sections
-    const sections = document.querySelectorAll('.section');
+    // Apply reveal class and observe sections
     sections.forEach(section => {
         section.classList.add('reveal');
         observer.observe(section);
